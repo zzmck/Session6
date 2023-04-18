@@ -1,0 +1,2 @@
+{"level":"error","message":"Controllers user.js : Erreur ajout d'utilisateur ValidationError: email: Error, expected `email` to be unique. Value: `a1c57bb36cef65cd0308b85658fee2d1560440358c5a4dea40faa2152b9f9dd7`"}
+{"level":"error","message":"Controllers user.js : Erreur ajout d'utilisateur ValidationError: email: Error, expected `email` to be unique. Value: `a1c57bb36cef65cd0308b85658fee2d1560440358c5a4dea40faa2152b9f9dd7`"}

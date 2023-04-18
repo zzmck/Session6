@@ -13,10 +13,16 @@ async function formulaire(req, res, next) {
   }
 }
 async function isExist(req, res, next){
-    await services.user.isExist(req.mail).then((founded)=>{
-      req.foundUser = founded;
-    });
+  try {
+    const founded = await services.user.isExist(req.mail);
+    if (founded) {
+      return res.status(400).json({ message: "Adresse e-mail déjà utilisée" });
+    }
     next();
+  } catch (error) {
+    services.serveurLog.save.log('error', `Middelware user.js : Erreur lors de la vérification de l'existence de l'utilisateur ${error}`);
+    return res.status(500).json({ message: "Internal server error" });
+  }
 };
 
   module.exports = { 
